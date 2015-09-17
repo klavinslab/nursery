@@ -4,7 +4,7 @@ class Protocol
 
     o = op input
 
-    o.input.all.take, method: "query"
+    o.input.all.query(true).take
     o.output.all.produce
 
     o.threads.each do |thread|
