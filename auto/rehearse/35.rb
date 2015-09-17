@@ -4,11 +4,13 @@ class Protocol
 
     o = op input
 
-    o.input.all.take
+    o.input.all.take, method: "query"
     o.output.all.produce
 
-    show do
-      title "Instructions here"
+    o.threads.each do |thread|
+      show do
+        title "Do something to item number #{thread.input.strain.item_id}"
+      end
     end
 
     o.input.all.release
