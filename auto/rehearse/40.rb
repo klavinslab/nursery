@@ -5,32 +5,31 @@ class Protocol
 
     o.input.all.take
     o.output.all.produce
-
-    show do
-      title "LB Agar"
-      note "Description: This protocol is for the preperation of LB Agar, the common plate media for growing bacteria cells."
-      note "Total duration: 3 hours"
-      note "Total worktime: 30 minutes"
-      warning "Wait until the agar has cooled enough to touch with bare hands and add the appropriate amount of antibiotic while stirring"
-    end
     
     show {
-      title "Get Bottle and Stir Bar: Retrieve one Glass Liter Bottle from the glassware rack and one Medium Magnetic Stir Bar from the dishwashing station, bring to weigh station. Put the stir bar in the bottle."
+      title "LB Liquid Media"
+      note "Description: This prepares a bottle of LB Media for growing bacteria"
+      note "Total duration: 3 hours"
+      note "Total worktime: 30 minutes"
+      warning "To add antibotics, wait for contents to cool to 40 C and add the appropriate amount of antibiotics"
+    }
+
+    show {
+      title "Place large weigh boat on gram scale and zero"
     }
     
     show {
-      title "Weigh Agar: Using the gram scale, large weigh boat, and chemical spatula, weigh out 29.6 grams of LB Agar powder and pour into the bottle."
+      title "Measure out 20 grams of LB media powder and pour contents into liter bottle"
       }
       
     show {
-      title "Using the graduated cylinder measure out 800 mL of DI water."
+      title "Measure out 800 mL of DI water using the graduated cyinder and pour into liter bottle"
     }
     
     show {
-      title "Measure out Water: fill bottle with DI water, shake to get all powder solvated."
+      title "Close liter bottle and shake until all contents are solvated"
     }
     
-
     o.input.all.release
     o.output.all.release
 
