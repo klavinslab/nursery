@@ -6,13 +6,13 @@ class Protocol
     o.input.all.take
     o.output.all.produce
 
-    show {
+    show do
       title "LB Agar"
       note "Description: This protocol is for the preperation of LB Agar, the common plate media for growing bacteria cells."
       note "Total duration: 3 hours"
       note "Total worktime: 30 minutes"
       warning "Wait until the agar has cooled enough to touch with bare hands and add the appropriate amount of antibiotic while stirring"
-    }
+    end
     
     show {
       title "Get Bottle and Stir Bar: Retrieve one Glass Liter Bottle from the glassware rack and one Medium Magnetic Stir Bar from the dishwashing station, bring to weigh station. Put the stir bar in the bottle."
