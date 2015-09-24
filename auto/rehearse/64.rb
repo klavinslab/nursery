@@ -5,7 +5,7 @@ class Protocol
     o = op input
 
     o.input.all.take
-    o.output.all.produce
+    divided_yeast_plates = o.output.streaked_yeast_plate.new_collections
 
     show do
       title "Instructions here"
