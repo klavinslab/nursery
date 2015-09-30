@@ -10,6 +10,7 @@ class Protocol
     show {
       title "Autoclave: stick autoclave tape on top of bottle cap, loosen top and autoclave at 110C for 15 minutes."
       timer initial: { hours: 0, minutes: 15, seconds: 0}
+      note o.input.all
     }
     
     show {
