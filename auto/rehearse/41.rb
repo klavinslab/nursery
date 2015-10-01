@@ -6,11 +6,12 @@ class Protocol
 
     o.input.all.take
     o.output.all.produce
-
+    d = o.input.all
+    
     show {
       title "Autoclave: stick autoclave tape on top of bottle cap, loosen top and autoclave at 110C for 15 minutes."
       timer initial: { hours: 0, minutes: 15, seconds: 0}
-      note "#{o}"
+      note "#{d}"
     }
     
     show {
