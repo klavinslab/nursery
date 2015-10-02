@@ -1,7 +1,6 @@
 class Protocol
 
   def main
-
     o = op input
 
     o.input.all.take
@@ -14,23 +13,31 @@ class Protocol
     }
     
     show {
-      note "Autoclave: stick autoclave tape on top of bottle cap, loosen top and autoclave at 110C for 15 minutes."
-      timer initial: { hours: 0, minutes: 15, seconds: 0}
+      title "Get Bottle and Stir Bar"
+      note "Retrieve one Glass Liter Bottle from the glassware rack and one Medium Magnetic Stir Bar from the dishwashing station, bring to weigh station. Put the stir bar in the bottle."
     }
     
     show {
-      note "Remove from Autoclave: put on thermal gloves and take bottle out of autoclave, place on stir plate."
+      title "Weigh Agar"
+      note "Using the gram scale, large weigh boat, and chemical spatula, weigh out 29.6 grams of LB Agar powder and pour into the bottle."
+      }
+      
+    show {
+      title "Measure Water"
+      note "Using the graduated cylinder measure out 800 mL of DI water."
     }
     
     show {
-      note "Stir: Heat to 65C while stirring at 700 rpm."
+      title "Mix solution"
+      note "fill bottle with DI water, shake to get all powder solvated."
     }
-
+    
     o.input.all.release
     o.output.all.release
 
     return o.result
 
+  
   end
-
+  
 end
