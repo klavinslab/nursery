@@ -6,7 +6,7 @@ class Protocol
     o.input.all.take
     o.output.all.produce
     
-    boo = o.output.media.item
+    boo = o.output.all.item_ids
 
     show {
       title "LB Agar"
