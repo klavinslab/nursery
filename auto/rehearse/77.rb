@@ -19,7 +19,7 @@ class Protocol
     if acids.length == 4
       label = "SC Media"
     else
-      label = "SDO -#{label.join("', '-)} #{agar}"
+      label = "SDO -#{label.join("', '-")} #{agar}"
     end
     
     show {
@@ -41,6 +41,7 @@ class Protocol
       title "Add Amino Acid"
       note "Add 8 mL of #{boo.join(", ")} solutions each to bottle"
     }
+
     show {
       title "Measure Water"
       note "Take the bottle to the DI water carboy and add water up to the 800 mL mark"
@@ -64,7 +65,9 @@ class Protocol
     
     o.input.all.release
     o.output.all.release
+
     return o.result
+
   
   end
   
