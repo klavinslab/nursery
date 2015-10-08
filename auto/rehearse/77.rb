@@ -6,31 +6,50 @@ class Protocol
     o.input.all.take
     o.output.all.produce
     
-    boo = o.input.all.parameter_names
+    acids = o.input.parameter_names
+    check = ["Leu", "His", "Trp", "Ura"]
+    label_array = check - acids
+    
+    if acids.include?("agar")
+      agar = ", 16g tryptone"
+    else 
+      agar = ""
+    end
+      
+    if acids.length == 4
+      label = "SC Media"
+    else
+      label = "SDO -#{label.join("', '-)} #{agar}"
+    end
     
     show {
-      title "Make SDO or SC Media"
-      note "Description: Makes 800 mL of synthetic dropout (SDO) or synthetic complete (SC) media with 2% glucose and adenine supplement (800mL)"
+      title "#{label}"
+      note "Description: Makes 800 mL of #{label} media with 2% glucose and adenine supplement"
+    }
+    
+    show {
+      title "Get Bottle and Stir Bar"
+      note "Retrieve one Glass Liter Bottle from the glassware rack and one Medium Magnetic Stir Bar from the dishwashing station, bring to weigh station. Put the stir bar in the bottle."
     }
     
     show {
       title "Weigh Chemicals"
-      note "Weight out nitrogen base, DO media, dextrose, and adenine sulfate and add to 1000 mL bottle"
+      note "Weight out 5.36g nitrogen base, 1.12g of DO media, 16g of dextrose, .064g adenine sulfate #{agar} and add to 1000 mL bottle"
     }
     
     show {
       title "Add Amino Acid"
-      note "Add #{boo.join(", ")} solutions to bottle"
+      note "Add 8 mL of #{boo.join(", ")} solutions each to bottle"
+    }
+    show {
+      title "Measure Water"
+      note "Take the bottle to the DI water carboy and add water up to the 800 mL mark"
     }
     
     show {
-      title "Add dlH2O"
-      note "Add 500 mL dIH2O to bottle, close cap tightly and shake to mix"
-    }
-
-    show {
-      title "Add Water"
-      note "Add water to 800 mL mark on bottle, shake again to mix"
+      title "Mix solution"
+      note "Shake until most of the powder is dissolved."
+      note "It is ok if a small amount of powder is not dissolved because the autoclave will dissolve it"
     }
     
     show {
@@ -40,7 +59,7 @@ class Protocol
     
     show {
       title "Label Bottle"
-      note "Label the bottle with 'YPAD', 'Your initials', '#{ boo.join("', '") }'"
+      note "Label the bottle with '#{label}', 'date', 'Your initials'"
     }
     
     o.input.all.release
