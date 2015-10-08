@@ -17,7 +17,7 @@ class Protocol
     end
       
     show {
-      title "Autoclave for Bacteria"
+      title "Autoclave Media"
       note "Description: This protocol is for sterilizing the media used for bacteria"
     }
     
@@ -30,7 +30,7 @@ class Protocol
     show {
       title "Autoclave"
       note "Check the water levels in the autoclave"
-      note "Loosen cap and autoclave at 110C for #{temp} minutes"
+      note "Loosen cap and autoclave at #{temp}C for 15 minutes"
       note "5 beeps will signify that the autoclave is done"
     }
 
