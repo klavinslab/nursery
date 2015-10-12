@@ -17,16 +17,16 @@ class Protocol
     
     show do
       title "Grab yeast plates"
-        #if o.output.streaked_yeast_plate.length > 0
-          #check "Grab #{o.output.streaked_yeast_plate.length} of YPAD plates, label with follow ids:"
-          #note o.output.streaked_yeast_plate.collect { |p| "#{p}"}
-          #check "Divide up each plate with 4 sections and mark each with circled #{(1..num_of_section).to_a.join(',')}"
-          #image "divided_yeast_plate"
-       # end
+        if o.output.streaked_yeast_plate.length > 0
+          check "Grab #{o.output.streaked_yeast_plate.length} of YPAD plates, label with follow ids:"
+          note o.output.streaked_yeast_plate.collect { |p| "#{p}"}
+          check "Divide up each plate with 4 sections and mark each with circled #{(1..num_of_section).to_a.join(',')}"
+          image "divided_yeast_plate"
+        end
     end
 
     # Take the required inputs from the lab
-    o.input.streaked_yeast_plate.take
+    o.input.yeast_glycerol_stock.take
 
     o.input.all.release
     o.output.all.release
