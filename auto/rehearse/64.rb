@@ -4,18 +4,29 @@ class Protocol
 
     o = op input
 
-    o.input.all.take
+    # Create a new CollectionArray of divided yeast plates for yeast strains
     divided_yeast_plates = o.output.streaked_yeast_plate.new_collections
     
+    # For each thread (yeast strain), associate it with an open slot in a divided yeast plate
     o.threads.spread(divided_yeast_plates) do |t, slot| 
       t.output.streaked_yeast_plate.associate slot
     end
     
+    # Produce the streaked yeast plate for this op
     o.output.streaked_yeast_plate.produce
     
     show do
-      title "Instructions here"
+      title "Grab yeast plates"
+        if o.output.streaked_yeast_plate.length > 0
+          check "Grab #{o.output.streaked_yeast_plate.length} of YPAD plates, label with follow ids:"
+          note o.output.streaked_yeast_plate.collect { |p| "#{p}"}
+          check "Divide up each plate with 4 sections and mark each with circled #{(1..num_of_section).to_a.join(',')}"
+          image "divided_yeast_plate"
+        end
     end
+
+    # Take the required inputs from the lab
+    o.input.streaked_yeast_plate.take
 
     o.input.all.release
     o.output.all.release
