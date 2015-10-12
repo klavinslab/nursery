@@ -19,7 +19,7 @@ class Protocol
       title "Grab yeast plates"
         if o.output.streaked_yeast_plate.length > 0
           check "Grab #{o.output.streaked_yeast_plate.length} of YPAD plates, label with follow ids:"
-          note o.output.streaked_yeast_plate.collect { |p| "#{p}"}
+          #note o.output.streaked_yeast_plate.collect { |p| "#{p}"}
           check "Divide up each plate with 4 sections and mark each with circled #{(1..num_of_section).to_a.join(',')}"
           image "divided_yeast_plate"
         end
