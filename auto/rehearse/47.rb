@@ -7,7 +7,8 @@ class Protocol
     o.input.all.take
     o.output.all.produce
     
-    type = o.input.parameter_names
+    type = o.input.all.type2
+    
     if type[0] == "bacteria"
       temp = 121
     elsif (type[0] == "yeast") || (type[0] == "yeast + bacteria")
