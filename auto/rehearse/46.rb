@@ -28,7 +28,7 @@ class Protocol
     }
     
     show {
-      title "Weight Out #{type[0]}" 
+      title "Weigh Out #{type[0]}" 
       note "Using the gram scale, large weigh boat, and chemical spatula, weigh out #{amount} grams of #{type[0]} powder and pour into the bottle."
       warning "Before and after using the spatula, clean with ethanol"
       }
