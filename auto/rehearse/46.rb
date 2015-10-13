@@ -7,14 +7,14 @@ class Protocol
     o.output.all.produce
     
     id = o.output.media.item_ids
-    type = o.input.type1
+    type = o.input
     
     if type == "LB Agar"
       amount = 29.6
     elsif (type == "LB Liquid Media") || (type == "TB Liquid Media")
       amount = 20
     else 
-      raise ArgumentError, "Parameter is not valid"
+      amount = 0
     end
    
     show {
