@@ -6,6 +6,8 @@ class Protocol
     o = op input
 
     o.input.all.take
+    
+    # Todo: Figure out how many gels to pour based on the number of threads (o.threads.length)
 
     show {
       title "#{o.name} Inputs"
