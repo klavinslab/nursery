@@ -5,6 +5,7 @@ class Protocol
     o = op input
     o.input.all.take
     #Defining an time_to_dilute array temporarily. Pull this from input once it's implemented in Aquarium
+    time_to_dilute=["dilute","dilute","dilute","dilute","dilute","dilute","dilute"]
     
      show {
       title "Protocol information"
