@@ -7,9 +7,10 @@ class Protocol
     o.input.all.take
     o.output.all.produce
 
-    show do
-      title "Instructions here"
-    end
+    show {
+      title "Protocol information"
+      note "This protocol is used to take cytometer readings from deepwell plates using u-bottom plates."
+    }
 
     o.input.all.release
     o.output.all.release
