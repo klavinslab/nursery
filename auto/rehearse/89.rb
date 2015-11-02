@@ -26,21 +26,21 @@ class Protocol
     end
     
     #Creating the table to show yeast strain-> Collection->Inducer association to the technicians
-    t = Table.new output_collection_id:"Eppendorf 96 Deepwell Plate",output_collection_loc:"Location",liquid:"800ml SC liquid (sterile)",ip_div_plate: "Divided Yeast Plate",inducer:"Inducers" 
+    t = Table.new output_collection_id:"Eppendorf 96 Deepwell Plate",output_collection_loc:"Location",liquid:"800ml SC liquid (sterile)",ip_div_plate:"Divided Yeast Plate",inducer:"Inducer" 
     o.threads.each do |thread|
       input_collections=thread.input.yeast_strain.collections
       output_collections = thread.output.yeast_deepwell_plate.collections
       input_index=0
         (0..output_collections.length-1).each do |i|
-          #Each Ispec object has rows and rows and columns and columns
-          #rows should be called on the Ispec for a Part-Vector since it will have 
-          #An array of collctions
+          #Each Ispec object has available to it the methods row and rows and column and columns 
+          #the rows/columns/collections method should be called on the Ispec object representing a Part-Vector since it will have 
+          #An array of collections
           #An array of rows
           #An array of columns
-          #All of equal size
-          #Another option would be iterate through individual samples of the Part-Vector and call the 
+          #Each array of equal size
+          #Another option would be to iterate through individual samples of the Part-Vector and call the 
           #'collection_id','row' and 'column' method on each sample.
-          t.output_collection_id(output_collections[i]).output_collection_loc(thread.output.yeast_deepwell_plate.rows[i]+thread.output.yeast_deepwell_plate.columns[i]).liquid("800ml SC liquid (sterile)").ip_div_plate(input_collections[i]).inducer("").append
+          t.output_collection_id(output_collections[i]).output_collection_loc(thread.output.yeast_deepwell_plate.rows[i]+','+thread.output.yeast_deepwell_plate.columns[i]).liquid("800ml SC liquid (sterile)").ip_div_plate(input_collections[i]).inducer("").append
         end
     end
     
