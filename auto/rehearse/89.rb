@@ -45,6 +45,17 @@ class Protocol
       table t.render
     end
     
+     show {
+      title "Seal the deepwell plate(s) with a breathable sealing film"
+      note "Put a breathable sealing film on following deepwell plate(s) #{deepwell_plates.uniq { |i| i.collection_id }}."
+      note "Place the deepwell plate(s) into the 30 C shaker incubator, make sure it is secure."
+    }
+    
+    deepwell_plates.each do |d|
+      d.location = "30 C shaker incubator"
+      d.save
+    end
+    
     #Release all input and output
     o.input.all.release
     o.output.all.release
