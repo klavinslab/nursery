@@ -27,16 +27,7 @@ class Protocol
     o.threads.each do |thread|
       input_strain=thread.input.yeast_strain
       output_strain = thread.output.yeast_deepwell_plate
-      inducer=""
-      #Each Ispec object has available to it the methods row and rows and column and columns 
-      #the rows/columns/collections method should be called on the Ispec object representing a Part-Vector since it will have 
-      #An array of collections
-      #An array of rows
-      #An array of columns
-      #Each array of equal size
-      #Another option would be to iterate through individual samples of the Part-Vector and call the 
-      #'collection_id','row' and 'column' method on each sample.
-      t.output_collection_id(output_strain.collection_id).output_collection_loc(output_strain.row+','+output_strain.column).liquid("800ml SC liquid (sterile)").ip_div_plate(thread.input.yeast_strain.collection_id).ip_div_location(thread.input.yeast_strain.row + thread.input.yeast_strain.column).inducer("").append
+      t.output_collection_id(output_strain.collection_id).output_collection_loc(output_strain.row+output_strain.column).liquid("800ml SC liquid (sterile)").ip_div_plate(input_strain.collection_id).ip_div_location(input_strain.row + input_strain.column).inducer("").append
     end
     
     #Rendering the table
