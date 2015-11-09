@@ -10,11 +10,10 @@ class Protocol
       note "This protocol is used to prepare yeast overnight suspensions from Divided Yeast Plate into Eppendorf 96 Deepwell Plate."
       }
     
-      
-    o.output.all.produce#When should we be calling this? In this case, will this only prodcue a item_id for the Eppendorf 96 Deepwell Plates we may need 
+    o.output.all.produce  
     
     #Create new collections, in this case Eppendorf 96 Deepwell Plate/Plates
-    #This is thread aware and takes into account the yeast strain specified in each and every thread
+    #This is thread aware and takes into account the yeast strains specified in each of threads batched for execution
     deepwell_plates=o.output.yeast_deepwell_plate.new_collections
     
     
