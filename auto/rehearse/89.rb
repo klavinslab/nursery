@@ -27,7 +27,10 @@ class Protocol
     o.threads.each do |thread|
       input_strain=thread.input.yeast_strain
       output_strain = thread.output.yeast_deepwell_plate
-      t.output_collection_id(output_strain.collection_id).output_collection_loc(output_strain.row+output_strain.column).liquid("800ml SC liquid (sterile)").ip_div_plate(input_strain.collection_id).ip_div_location(input_strain.row + input_strain.column).inducer("").append
+      show{
+        input_strain.collections
+        output_strain.collections
+      }
     end
     
     #Rendering the table
