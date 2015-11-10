@@ -11,6 +11,13 @@ class Protocol
       title "Instructions here"
     end
 
+    show do
+      o.threads.each do |thread|
+        note "Thread #{thread.index}: "
+          + "#{thread.input.fragments} => #{thread.output.plasmid.sample_id}"
+      end
+    end
+
     o.input.all.release
     o.output.all.release
 
