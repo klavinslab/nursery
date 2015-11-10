@@ -13,8 +13,7 @@ class Protocol
 
     show do
       o.threads.each do |thread|
-        note "Thread #{thread.index}: "
-        + " => #{thread.output.plasmid.sample_id}"
+        note "Thread #{thread.index}: => #{thread.output.plasmid.sample_id}"
       end
     end
 
