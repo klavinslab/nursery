@@ -12,6 +12,8 @@ class Protocol
     end
 
     show do
+      note "#{o.input}"
+      note "#{o.output}"
       o.threads.each do |thread|
         note "Thread #{thread.index}: => #{thread.output.plasmid.sample_id}"
         note "#{thread.input}"
