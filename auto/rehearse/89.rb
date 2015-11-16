@@ -20,11 +20,15 @@ class Protocol
     end
     
     t = Table.new output_collection_id:"Eppendorf 96 Deepwell Plate",output_collection_loc:"Location",liquid:"800ml SC liquid (sterile)",ip_div_plate:"Divided Yeast Plate",ip_div_location:"Location",inducer:"Inducer" 
-      o.threads.each do |thread|
+    o.threads.each do |thread|
       input_strain=thread.input.yeast_strain
       output_strain = thread.output.yeast_deepwell_plate
       inducer=""
       t.output_collection_id(output_strain.collection_id).output_collection_loc(output_strain.row).liquid("800ml SC liquid (sterile)").ip_div_plate(thread.input.yeast_strain.collection_id).ip_div_location(thread.input.yeast_strain.row).inducer("").append
+      show do
+        input_strain.collection_id
+        output_strain.collection_id
+      end
     end
     
     #Rendering the table
@@ -36,7 +40,6 @@ class Protocol
     o.output.all.release
 
     return o.result
-
   end
 
 end
