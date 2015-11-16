@@ -20,14 +20,6 @@ class Protocol
       t.output.yeast_deepwell_plate.associate slot
     end
     
-  
-    o.threads.each do |thread|
-      input_strain=thread.input.yeast_strain
-      show do
-        note input_strain
-      end
-    end
-    
     
     o.input.all.release
     o.output.all.release
