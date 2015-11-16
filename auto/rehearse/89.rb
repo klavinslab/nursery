@@ -2,6 +2,7 @@ class Protocol
 
   def main
     o = op input
+    
     o.input.all.take
     o.output.all.produce 
     
@@ -19,7 +20,7 @@ class Protocol
       t.output.yeast_deepwell_plate.associate slot
     end
     
-    t = Table.new output_collection_id:"Eppendorf 96 Deepwell Plate",output_collection_loc:"Location",liquid:"800ml SC liquid (sterile)",ip_div_plate:"Divided Yeast Plate",ip_div_location:"Location",inducer:"Inducer" 
+  
     o.threads.each do |thread|
       input_strain=thread.input.yeast_strain
       show do
@@ -27,10 +28,6 @@ class Protocol
       end
     end
     
-    #Rendering the table
-    show do
-      table t.render
-    end
     
     o.input.all.release
     o.output.all.release
