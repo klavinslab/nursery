@@ -23,7 +23,7 @@ class Protocol
     o.threads.each do |thread|
       input_strain=thread.input.yeast_strain
       show do
-        input_strain
+        note input_strain
       end
     end
     
