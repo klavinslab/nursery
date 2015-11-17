@@ -16,7 +16,7 @@ class Protocol
     op_deepwell_plates = o.output.yeast_deepwell_plate.new_collections
 
     show {
-      note "#{o.output.yeast_deepwell_plate}"
+      note "#{o.output.yeast_deepwell_plate.to_json}"
       note op_deepwell_plates.each { |deepwell| "#{deepwell.id}"}
     }
 
