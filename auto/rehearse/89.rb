@@ -16,7 +16,7 @@ class Protocol
     op_deepwell_plates = o.output.yeast_deepwell_plate.new_collections
 
     show {
-      note op_deepwell_plates.each { |deepwell| "#{deepwell}"}
+      note op_deepwell_plates.each { |deepwell| "#{deepwell.to_json}"}
     }
 
     o.threads.spread(op_deepwell_plates, skip_occupied: true) do |t, slot|
