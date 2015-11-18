@@ -24,18 +24,18 @@ class Protocol
     o.output.all.produce
     #
     #  #Creating the table to show yeast strain-> Collection->Inducer association to the technicians
-    # t = Table.new output_collection_id:"Eppendorf 96 Deepwell Plate",output_collection_loc:"Location",liquid:"800ml SC liquid (sterile)",ip_div_plate:"Divided Yeast Plate",ip_div_location:"Location",inducer:"Inducer"
-    # o.threads.each do |thread|
-    #   input_strain=thread.input.yeast_strain
-    #   output_strain = thread.output.yeast_deepwell_plate
-    #   inducer=""
-    #   t.output_collection_id(output_strain.collection_id).output_collection_loc(output_strain.row).liquid("800ml SC liquid (sterile)").ip_div_plate(thread.input.yeast_strain.collection_id).ip_div_location(thread.input.yeast_strain.row).inducer("").append
-    # end
+    t = Table.new output_collection_id:"Eppendorf 96 Deepwell Plate",output_collection_loc:"Location",liquid:"800ml SC liquid (sterile)",ip_div_plate:"Divided Yeast Plate",ip_div_location:"Location",inducer:"Inducer"
+    o.threads.each do |thread|
+      input_strain = thread.input.yeast_strain
+      output_strain = thread.output.yeast_strain
+      inducer=""
+      t.output_collection_id(output_strain.collection_id).output_collection_loc(output_strain.row).liquid("800ml SC liquid (sterile)").ip_div_plate(input_strain.collection_id).ip_div_location(input_strain.row).inducer("").append
+    end
     #
-    #  #Rendering the table
-    # show do
-    #   table t.render
-    # end
+    #Rendering the table
+     show do
+       table t.render
+     end
 
     o.input.all.release
     o.output.all.release
