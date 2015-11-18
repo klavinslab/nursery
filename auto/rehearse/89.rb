@@ -29,7 +29,7 @@ class Protocol
       input_strain = thread.input.yeast_strain
       output_strain = thread.output.yeast_strain
       inducer=""
-      t.output_collection_id(output_strain.collection_id).output_collection_loc(output_strain.row).liquid("800ml SC liquid (sterile)").ip_div_plate(input_strain.collection_id).ip_div_location(input_strain.row).inducer("").append
+      t.output_collection_id(output_strain.collection_id).output_collection_loc(output_strain.row+','+output_strain.column).liquid("800ml SC liquid (sterile)").ip_div_plate(input_strain.collection_id).ip_div_location(input_strain.row+','+input_strain.column).inducer("").append
     end
     #
     #Rendering the table
