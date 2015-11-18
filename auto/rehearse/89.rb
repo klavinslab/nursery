@@ -34,6 +34,7 @@ class Protocol
     #
     #Rendering the table
     show do
+       title "Load Eppendorf 96 Deepwell Plates"
        table t.choose([:output_collection_id,:output_collection_loc,:liquid,:ip_div_plate,:ip_div_location,:inducer]).render
      end
 
