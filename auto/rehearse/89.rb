@@ -34,7 +34,7 @@ class Protocol
     #
     #Rendering the table
      show do
-       table t.render
+       table t.choose([:output_collection_id,:output_collection_loc,:liquid]).render
      end
 
     o.input.all.release
