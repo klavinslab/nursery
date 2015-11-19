@@ -11,8 +11,8 @@ class Protocol
   #volume=
   #dilution_rate=
 
-  ip_deepwell_plates=o.input.yeast_deepwell_plate.collections
-  op_deepwell_plates=o.output.yeast_deepwell_plate.new_collections
+  ip_deepwell_plates=o.input.yeast_strain.collections
+  op_deepwell_plates=o.output.yeast_strain.new_collections
 
  show {
       title "Take new deepwell plates"
