@@ -3,14 +3,13 @@ class Protocol
   def main
 
     o = op input
-    
-    puts o.output.all
-
+  
     o.input.all.take
     o.output.all.produce
 
     show do
       title "Instructions here"
+      note "#{o.output.all}"
     end
 
     o.input.all.release
