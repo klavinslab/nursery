@@ -9,7 +9,7 @@ class Protocol
 
     show do
       title "Instructions here"
-      note "#{o.output.samples}"
+      note "#{o.output.MediaType.samples}"
     end
 
     o.input.all.release
