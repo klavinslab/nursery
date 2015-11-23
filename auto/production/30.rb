@@ -9,7 +9,7 @@ class Protocol
 
     show do
       title "Instructions here"
-      note "#{o.output.all.get[0].sample}"
+      note "#{o.output.all.samples}"
     end
 
     o.input.all.release
