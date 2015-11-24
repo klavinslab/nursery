@@ -9,7 +9,7 @@ class Protocol
     
     label = "SDO -trp -leu"
     typeSDO = label.scan(/-[a-z]+/)
-    acids = typeSDO.collect!{|x| x.gsub(/-/, '')}
+    acids = typeSDO.collect{|x| x.gsub(/-/, '')}
       
 
 
