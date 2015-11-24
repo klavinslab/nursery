@@ -7,7 +7,7 @@ class Protocol
     o.output.all.produce
     
     label = "SDO -leu -trp"
-    typeSDO = temp.scan(/-[a-z]+/)
+    typeSDO = label.scan(/-[a-z]+/)
     acids = typeSDO.collect{|x| x.gsub(/-/, '')}
     includeAcids = ["Leu", "His", "Trp", "Ura"] - acids
     
