@@ -9,7 +9,7 @@ class Protocol
     label = "SDO -leu -trp"
     typeSDO = label.scan(/-[a-z]+/)
     acids = typeSDO.collect{|x| x.gsub(/-/, '')}
-    includeAcids = ["Leu", "His", "Trp", "Ura"] - acids
+    includeAcids = ["leu", "his", "trp", "ura"] - acids
     
     #parameters
     #param = o.input.parameter_names
@@ -30,7 +30,7 @@ class Protocol
     show {
       title "#{label}"
       note "Description: Makes 800 mL of #{label} media with 2% glucose and adenine supplement"
-      note "#{typeSDO} and #{acids} and #{includeAcids}"
+      #note "#{typeSDO} and #{acids} and #{includeAcids}"
     }
     
     show {
