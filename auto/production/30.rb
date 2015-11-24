@@ -30,6 +30,7 @@ class Protocol
     show {
       title "#{label}"
       note "Description: Makes 800 mL of #{label} media with 2% glucose and adenine supplement"
+      note "#{typeSDO} and #{acids} and #{includeAcids}"
     }
     
     show {
