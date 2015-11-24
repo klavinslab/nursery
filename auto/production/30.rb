@@ -6,14 +6,16 @@ class Protocol
   
     o.input.all.take
     o.output.all.produce
+    
+    label = "SDO -trp -leu"
+    typeSDO = label.scan(/-[a-z]+/)
+    acids = typeSDO.collect!{|x| x.gsub(/-/, '')}
+      
+
 
     show do
-      note "#{o.output.media.sample_names}"
-      sampleString = "SDO -trp -leu"
-      contentChecker = Array.new
-      inputAcids = sampleString.split('')
-      (0..array.length-1).each do |i|
-        contentChecker.push(acids)
+      note "#{typeSDO} and #{acids}"
+
       
     end
 
