@@ -6,48 +6,21 @@ class Protocol
     o.input.all.take
     o.output.all.produce
     
-    label = "SDO -leu -trp"
-    typeSDO = label.scan(/-[a-z]+/)
-    acids = typeSDO.collect{|x| x.gsub(/-/, '')}
-    includeAcids = ["leu", "his", "trp", "ura"] - acids
-    
-    #parameters
-    #param = o.input.parameter_names
-    
-    #get array of just amino acid parameters
-    #acids = param - ["agar"]
-    
-    #get array of not included amino acids
-    #label_array = ["Leu", "His", "Trp", "Ura"] - acids
-      
-    #modify label for bottle depending on # of amino acids and presence of agar
-    #if acids.length == 4
-    #  label = "SC Media #{label.include?("agar") ? " + Agar" : ""}"
-    #else
-    #  label = "SDO -#{label_array.join(" -")} #{param.include?("agar") ? " + Agar" : ""}"
-    #end
+    itemOne = find(:item, { object_type: { name: "Adenine (Adenine hemisulfate)" } } )
+    take itemOne
+    item_id = o.output.all.item_ids
     
     show {
-      title "#{label}"
-      note "Description: Makes 800 mL of #{label} media with 2% glucose and adenine supplement"
-      #note "#{typeSDO} and #{acids} and #{includeAcids}"
-    }
-    
-    show {
-      title "Get Bottle and Stir Bar"
-      note "Retrieve one Glass Liter Bottle from the glassware rack and one Medium Magnetic Stir Bar from the dishwashing station, bring to weigh station. Put the stir bar in the bottle."
+      title "Make YPAD Media"
+      note "Description: Make 800 mL of yeast extract-tryptone-dextrose medium + adenine (YPAD)"
+      note "#{itemOne}"
     }
     
     show {
       title "Weigh Chemicals"
-      note "Weight out 5.36g nitrogen base, 1.12g of DO media, 16g of dextrose, .064g adenine sulfate#{label.include?("agar") ? ", 16g tryptone" : ""} and add to 1000 mL bottle"
+      note "Weight out 8g yeast extract, 16g tryptone, 16g dextrose, .064g adenine sulfate and add to 1000 mL bottle"
     }
     
-    show {
-      title "Add Amino Acid"
-      note "Add 8 mL of #{includeAcids.join(", ")} solutions each to bottle"
-    }
-
     show {
       title "Measure Water"
       note "Take the bottle to the DI water carboy and add water up to the 800 mL mark"
@@ -66,7 +39,7 @@ class Protocol
     
     show {
       title "Label Bottle"
-      note "Label the bottle with '#{label}', 'date', 'Your initials'"
+      note "Label the bottle with 'YPAD', 'Your initials', '#{item_id[0]}'"
     }
     
     o.input.all.release
@@ -78,4 +51,3 @@ class Protocol
   end
   
 end
-
