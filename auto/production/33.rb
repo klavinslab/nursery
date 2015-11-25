@@ -4,7 +4,7 @@ class Protocol
     o = op input
     
     o.output.all.produce
-    label = o.output.all.samples
+    label = o.output.all.get
     
     ingredients = find(:item,{object_type:{name:"Adenine (Adenine hemisulfate)"}}) + 
         find(:item,{object_type:{name:"Dextrose"}}) + find(:item,{object_type:{name:"Yeast Nitrogen Base Without Amino Acids"}}) 
@@ -34,6 +34,7 @@ class Protocol
     show {
       title "#{label}"
       note "Description: Makes 800 mL of #{label} media with 2% glucose and adenine supplement"
+      note "#{label}"
     }
     
     show {
