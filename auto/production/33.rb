@@ -4,7 +4,7 @@ class Protocol
     o = op input
     
     o.output.all.produce
-    label = o.output.all.samples[0].name
+    label = o.output.all.samples
     
     ingredients = find(:item,{object_type:{name:"Adenine (Adenine hemisulfate)"}}) + 
         find(:item,{object_type:{name:"Dextrose"}}) + find(:item,{object_type:{name:"Yeast Nitrogen Base Without Amino Acids"}}) 
