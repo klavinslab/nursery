@@ -18,13 +18,13 @@ class Protocol
     includeAcids = ["leu", "his", "trp", "ura"] - acids
     includeAcids.each do |i|
       if(i == "leu")
-        ingredients += find(:item,{object_type:{name:"Leucine Solution"}})
+        ingredients += find(:item,{object_type:{name:"Leucine Solution"}})[0]
       elsif(i == "his")
-        ingredients += find(:item,{object_type:{name:"Histidine Solution"}})
+        ingredients += find(:item,{object_type:{name:"Histidine Solution"}})[0]
       elsif(i == "trp")
-        ingredients += find(:item,{object_type:{name:"Tryptophan Solution"}})
+        ingredients += find(:item,{object_type:{name:"Tryptophan Solution"}})[0]
       else
-        ingredients += find(:item,{object_type:{name:"Uracil Solution"}})
+        ingredients += find(:item,{object_type:{name:"Uracil Solution"}})[0]
       end
     end
     
@@ -85,7 +85,7 @@ class Protocol
     
     show {
       title "Label Bottle"
-      note "Label the bottle with '#{label.gsub(/(unsterile)/, '')}', 'Date', 'Your initials', '#{item_id[0]}'"
+      note "Label the bottle with '#{label.gsub(/\(unsterile\)/, '')}', 'Date', 'Your initials', '#{item_id[0]}'"
     }
     
     release ingredients, interactive: true
