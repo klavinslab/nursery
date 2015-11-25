@@ -6,7 +6,9 @@ class Protocol
     o.input.all.take
     o.output.all.produce
     
-    itemOne = find(:item, { object_type: { name: "Adenine (Adenine hemisulfate)" } } )
+    itemOne = find(:item, { object_type: { name: "Adenine (Adenine hemisulfate)" } } ) + 
+        find(:item, { object_type: { name: "Dextrose" } } ) + find(:item, { object_type: { name: "Bacto Yeast Extract" } } ) +
+            find(:item, { object_type: { name: "Bacto Tryptone" } } )
     take itemOne
     item_id = o.output.all.item_ids
     
