@@ -9,11 +9,11 @@ class Protocol
     o.threads.each do |thread|  
       tempAcids = Array.new
       includeAcids = []
-      thread.input.powder.each do |acid|
-        # includeAcids.push(acid.sample.name)
-        show {
-          note "#{acid}"
-        }
+      thread.input.powder.sample.each do |acid|
+        includeAcids.push(acid.name)
+        # show {
+        #   note "#{acid}"
+        # }
       end
       # includeAcids = ["Histidine", "Uracil"]
       includeAcids.each do |acid|
