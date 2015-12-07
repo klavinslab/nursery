@@ -37,7 +37,7 @@ class Protocol
     # raise ( "Could not find Media" ) unless dropOut
     
     
-    o.input.powder.take
+    o.input.all.take
     # o.output.media.associate_sample(dropOut).produce
     
     #ingredients = find(:item,{object_type:{name:"Adenine (Adenine hemisulfate)"}}) + 
@@ -69,7 +69,7 @@ class Protocol
     show {
       title "#{label}"
       note "Description: Makes 800 mL of #{label} media with 2% glucose and adenine supplement"
-      note "#{o.input.powder}"
+      note "#{o.input.powder.sample.name}"
     }
     
     show {
