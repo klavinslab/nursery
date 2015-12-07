@@ -6,7 +6,10 @@ class Protocol
     
     tempAcids = Array.new
   
-    includeAcids = o.input.powder.sample.name
+    includeAcids = []
+    o.input.powder.each do |acid|
+      includeAcids.push(acid.sample.name)
+    end
     # includeAcids = ["Histidine", "Uracil"]
     includeAcids.each do |acid|
       if(acid == "Histidine")
