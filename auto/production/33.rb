@@ -4,8 +4,9 @@ class Protocol
     
     o = op input
     
+    o.input.all.take
+    
     o.threads.each do |thread|  
-      thread.input.all.take
       tempAcids = Array.new
       includeAcids = []
       thread.input.powder.each do |acid|
