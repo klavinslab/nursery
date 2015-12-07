@@ -9,7 +9,7 @@ class Protocol
     o.threads.each do |thread|  
       tempAcids = Array.new
       includeAcids = []
-      includeAcids.push(thread.input.powder.sample.name)
+      includeAcids.push(thread.input.powder.samples)
       # thread.input.powder[:sample].each do |acid|
       #   includeAcids.push(acid.sample.name)
       # end
