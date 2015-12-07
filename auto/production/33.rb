@@ -12,6 +12,8 @@ class Protocol
       thread.input.powder.samples.each do |sample|
         includeAcids.push(sample.name)
       end
+      
+      checkAgar = false
 
       includeAcids.each do |acid|
         if(acid == "Histidine")
