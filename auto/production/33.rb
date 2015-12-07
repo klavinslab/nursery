@@ -9,12 +9,9 @@ class Protocol
     o.threads.each do |thread|  
       tempAcids = Array.new
       includeAcids = []
-      # thread.input.powder.sample.each do |acid|
-      #   # includeAcids.push(acid.name)
-      # end
-      show {
-        note "#{thread.input.powder}"
-      }
+      thread.input.powder[:sample].each do |acid|
+        includeAcids.push(acid.name)
+      end
       # includeAcids = ["Histidine", "Uracil"]
       includeAcids.each do |acid|
         if(acid == "Histidine")
