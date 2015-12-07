@@ -11,6 +11,7 @@ class Protocol
       includeAcids = []
       thread.input.powder.samples.each do |sample|
         includeAcids.push(sample.name)
+      end
 
       # includeAcids = ["Histidine", "Uracil"]
       includeAcids.each do |acid|
