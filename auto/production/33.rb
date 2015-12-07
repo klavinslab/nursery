@@ -30,6 +30,8 @@ class Protocol
           raise("Non amino acid specified")
         end
       end
+      
+      includeAcids = includeAcids - ["Agar"]
     
       missingAcids = ["His", "Leu", "Trp", "Ura"] - tempAcids
       
