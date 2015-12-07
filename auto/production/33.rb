@@ -10,7 +10,10 @@ class Protocol
       tempAcids = Array.new
       includeAcids = []
       thread.input.powder.each do |acid|
-        includeAcids.push(acid.sample.name)
+        # includeAcids.push(acid.sample.name)
+        show {
+          note "#{acid}"
+        }
       end
       # includeAcids = ["Histidine", "Uracil"]
       includeAcids.each do |acid|
