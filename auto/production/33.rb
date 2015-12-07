@@ -27,7 +27,7 @@ class Protocol
     if(tempAcids.empty?)
       label = "SC (unsterile)"
     else
-      label = "SDO -" + missingAcids.sort_by!{|i| i}.join(" -")
+      label = "SDO -" + missingAcids.sort_by!{|i| i}.join(" -") + " (unsterile)"
     end
     
     dropOut = Sample.find_by_name(label)
@@ -104,7 +104,7 @@ class Protocol
       note "Label the bottle with '#{label.gsub(/\(unsterile\)/, '')}', 'Date', 'Your initials'"
     }
     
-    release ingredients, interactive: true
+    o.input.all.release
     o.output.all.release
 
     return o.result
