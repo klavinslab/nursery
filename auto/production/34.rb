@@ -15,7 +15,7 @@ class Protocol
       title "Threads"
       o.threads.each do |thread|
         note "Thread #{thread.index}"
-        bullet "u1: #{thread.input.u1.sample.name} (#{thread.input.u1.sample}), Item: #{thread.input.u1.item}"
+        bullet "u1: #{thread.input.u1} #{thread.input.u1.sample.name} (#{thread.input.u1.sample}), Item: #{thread.input.u1.item}"
         bullet "u2: #{thread.input.u2.sample.name} (#{thread.input.u2.sample}), Item: #{thread.input.u2.item}"
         bullet "y: #{thread.output.y.sample.name} (#{thread.output.y.sample}), Item: #{thread.output.y.item}"
       end
