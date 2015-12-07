@@ -6,16 +6,17 @@ class Protocol
     
     tempAcids = Array.new
   
-    includeAcids = o.input.powder
+    # includeAcids = o.input.powder
+    includsAcids = ["Triptophan", "Leucine"]
     includeAcids.each do |acid|
       if(acid == "Histidine")
         tempAcids.push("His")
       elsif(acid == "Leucine")
         tempAcids.push("Leu")
-      elsif(acid == "Tryptophan")
+      elsif(acid == "Triptophan")
         tempAcids.push("Trp")
       elsif(acid == "Uracil")
-        ary.push("Ura")
+        tempAcids.push("Ura")
       else
         raise("Non amino acid specified")
       end
