@@ -7,9 +7,9 @@ class Protocol
     tempAcids = Array.new
   
     includeAcids = []
-    o.input.powder.each do |acid|
-      includeAcids.push(acid.sample.name)
-    end
+    # o.input.powder.each do |acid|
+    #   includeAcids.push(acid.sample.name)
+    # end
     # includeAcids = ["Histidine", "Uracil"]
     includeAcids.each do |acid|
       if(acid == "Histidine")
@@ -69,6 +69,7 @@ class Protocol
     show {
       title "#{label}"
       note "Description: Makes 800 mL of #{label} media with 2% glucose and adenine supplement"
+      note "{o.input.all}"
     }
     
     show {
