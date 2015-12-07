@@ -110,10 +110,10 @@ class Protocol
         note "Label the bottle with '#{label.gsub(/ \(unsterile\)/, '')}', 'Date', 'Your initials'"
       }
       
-      thread.input.all.release
-      thread.output.all.release
+      # thread.output.all.release
 
     end
-  return o.result
+    o.input.all.release
+    return o.result
   end
 end
