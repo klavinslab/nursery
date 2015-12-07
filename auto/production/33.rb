@@ -54,7 +54,7 @@ class Protocol
       
       show {
         title "Weigh Chemicals"
-        note "Weight out 5.36g nitrogen base, 1.12g of DO media, 16g of dextrose, .064g adenine sulfate" + checkAgar?", 16g tryptone" : "" + " and add to 1000 mL bottle"
+        note "Weight out 5.36g nitrogen base, 1.12g of DO media, 16g of dextrose, .064g adenine sulfate" + (checkAgar ? ", 16g tryptone" : "") + " and add to 1000 mL bottle"
       }
       
       show {
