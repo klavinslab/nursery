@@ -27,6 +27,7 @@ class Protocol
       label = "SC (unsterile)"
     else
       label = "SDO -" + missingAcids.sort_by!{|i| i}.join(" -")
+    end
     
     dropOut = Sample.find_by_name(label)
     raise ( "Could not find Media" ) unless dropOut
