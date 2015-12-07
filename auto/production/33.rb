@@ -67,6 +67,9 @@ class Protocol
 
     
     show {
+      o.threads.each do |thread|
+        note "#{thread.input.powder.sample.name}
+      end
       title "#{label}"
       note "Description: Makes 800 mL of #{label} media with 2% glucose and adenine supplement"
       note "#{o.input.powder.sample.name}"
