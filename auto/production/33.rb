@@ -30,12 +30,12 @@ class Protocol
       label = "SDO -" + missingAcids.sort_by!{|i| i}.join(" -") + " (unsterile)"
     end
     
-    dropOut = Sample.find_by_name(label)
-    raise ( "Could not find Media" ) unless dropOut
+    # dropOut = Sample.find_by_name(label)
+    # raise ( "Could not find Media" ) unless dropOut
     
     
     o.input.all.take
-    o.output.media.associate_sample(dropOut).produce
+    # o.output.media.associate_sample(dropOut).produce
     
     #ingredients = find(:item,{object_type:{name:"Adenine (Adenine hemisulfate)"}}) + 
     #    find(:item,{object_type:{name:"Dextrose"}}) + find(:item,{object_type:{name:"Yeast Nitrogen Base Without Amino Acids"}}) 
