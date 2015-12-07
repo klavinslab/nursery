@@ -101,7 +101,7 @@ class Protocol
     
     show {
       title "Label Bottle"
-      note "Label the bottle with '#{label.gsub(/\(unsterile\)/, '')}', 'Date', 'Your initials'"
+      note "Label the bottle with '#{label.gsub(/ \(unsterile\)/, '')}', 'Date', 'Your initials'"
     }
     
     o.input.all.release
