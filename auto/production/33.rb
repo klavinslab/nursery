@@ -72,7 +72,6 @@ class Protocol
       end
       title "#{label}"
       note "Description: Makes 800 mL of #{label} media with 2% glucose and adenine supplement"
-      note "#{o.input.powder.sample.name}"
     }
     
     show {
