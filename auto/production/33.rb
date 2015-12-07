@@ -34,7 +34,7 @@ class Protocol
       if(tempAcids.empty?)
         label = "SC (unsterile)"
       else
-        label = "SDO -" + missingAcids.join(" -") + checkAgar?" + Agar" : "" + " (unsterile)"
+        label = "SDO -" + missingAcids.join(" -") + (checkAgar ? " + Agar" : "") + " (unsterile)"
       end
       
       dropOut = Sample.find_by_name(label)
