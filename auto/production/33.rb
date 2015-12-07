@@ -4,7 +4,8 @@ class Protocol
     
     o = op input
     
-    o.threads.each do |thread|    
+    o.threads.each do |thread|  
+      thread.input.all.take
       tempAcids = Array.new
       includeAcids = []
       thread.input.powder.each do |acid|
@@ -36,7 +37,6 @@ class Protocol
       dropOut = Sample.find_by_name(label)
       raise ( "Could not find Media" ) unless dropOut
       
-      thread.input.all.take
       thread.output.media.associate_sample(dropOut).produce
       
       #ingredients = find(:item,{object_type:{name:"Adenine (Adenine hemisulfate)"}}) + 
