@@ -44,7 +44,7 @@ class Protocol
       dropOut = Sample.find_by_name(label)
       raise ( "Could not find Media" ) unless dropOut
       
-      thread.output.media.associate_sample(dropOut).produce
+      thread.output.media.sample(dropOut).produce
 
       show {
         title "#{label}"
