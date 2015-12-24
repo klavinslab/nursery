@@ -41,9 +41,11 @@ class Protocol
         label = "SDO -" + missingAcids.join(" -") + (checkAgar ? " + Agar" : "") + " (unsterile)"
       end
       
-      dropOut = Sample.find_by_name(label)
-      raise ( "Could not find Media" ) unless dropOut
+   #   dropOut = Sample.find_by_name(label)
+  #    raise ( "Could not find Media" ) unless dropOut
       
+      
+      dropOut = Sample.find(8428)  
       show {
         note "#{dropOut}"
       }
