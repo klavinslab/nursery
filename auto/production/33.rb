@@ -48,7 +48,7 @@ class Protocol
         note "#{dropOut}"
       }
       
-      o.output.media.associate_sample dropOut
+      thread.output.media.associate_sample dropOut
       
 
       show {
